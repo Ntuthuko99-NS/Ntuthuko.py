@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- Auth screen -->
+    <section id="auth" hidden>
+      <h1 id="auth-title">Log in</h1>
+      <form id="auth-form" novalidate>
+        <label id="name-field" hidden>Name
+          <input name="name" autocomplete="name">
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>Password
+          <input name="password" type="password" autocomplete="current-password" minlength="8" required>
+        </label>
+        <p id="auth-error" role="alert"></p>
+        <button type="submit" id="auth-submit">Log in</button>
+      </form>
+      <p class="switch">
+        <span id="switch-text">New here?</span>
+        <button type="button" id="switch-btn" class="link">Create an account</button>
+      </p>
+    </section>
+
+    <!-- Signed-in screen -->
+    <section id="home" hidden>
+      <header>
+        <div>
+          <h1 id="welcome"></h1>
+          <p id="member-since"></p>
+        </div>
+        <button type="button" id="logout" class="secondary">Log out</button>
+      </header>
+
+      <form id="note-form">
+        <label for="note-body">Add a note (saved in your database)</label>
+        <div class="row">
+          <input id="note-body" maxlength="500" placeholder="Write something">
+          <button type="submit">Save note</button>
+        </div>
+        <p id="note-error" role="alert"></p>
+      </form>
+
+      <ul id="notes"></ul>
+      <p id="empty" hidden>No notes yet. Add your first one above.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
